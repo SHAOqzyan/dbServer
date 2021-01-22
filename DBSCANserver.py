@@ -35,7 +35,7 @@ class dbServer(object):
 
 
         if produceRMSFITS and rmsFITS is None :
-            rmsFITS=doFITS.getRMSFITS( self.rawCOFITS, "rms_"+self.rawCOFITS   )
+            rmsFITS=doFITS.getRMSFITS( self.rawCOFITS, "rms_"+os.path.basename( self.rawCOFITS )  )
 
         doMWdbscan.rawCOFITS =  rawCOFITS
         doMWdbscan.rmsFITS = rmsFITS #you can provde rms fits if you hae one
