@@ -30,7 +30,7 @@ class dbServer(object):
         #rawCOFITS = "../fcrao_rep_m.fits"
 
         rawCOFITS=self.rawCOFITS
-        if self.rawCOFITS in None:
+        if self.rawCOFITS is None:
             return
 
 
