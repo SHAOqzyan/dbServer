@@ -25,7 +25,7 @@ class dbServer(object):
 
 
 
-    def pipeLine(self, rawCOFITS,rmsFITS=None,averageRMS=0.5,processPath="./",produceRMSFITS=False ):
+    def pipeLine(self,  rmsFITS=None,averageRMS=0.5,processPath="./",produceRMSFITS=False ):
 
         #rawCOFITS = "../fcrao_rep_m.fits"
         rawCOFITS =  rawCOFITS #"Q1Sub.fits"
