@@ -58,5 +58,6 @@ doServer = dbServer()
 
 
 if 1:
-    doServer.rawCOFITS=""
+
+    doServer.rawCOFITS="../MWISP_crop.fits"
     doServer.pipeLine(produceRMSFITS=True)
