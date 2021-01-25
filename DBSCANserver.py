@@ -56,9 +56,13 @@ class dbServer(object):
 
 doServer = dbServer()
 
-dataPath = "/media/qzyan/maclinux/Data/Q2CompareData/"
 
-if 1:
+if 1:#run on server
+    doServer.rawCOFITS=  "MWISP_crop.fits"
+    doServer.pipeLine(produceRMSFITS=True, processPath= "./DBSCANresults/" )
+
+if 0:
+    dataPath = "/media/qzyan/maclinux/Data/Q2CompareData/"
 
     doServer.rawCOFITS= dataPath+"CfA_crop.fits"
     doServer.pipeLine(produceRMSFITS=True, processPath= "./DBSCANresults/" )
