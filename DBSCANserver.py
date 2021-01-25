@@ -35,6 +35,7 @@ class dbServer(object):
 
 
         if produceRMSFITS and rmsFITS is None :
+
             rmsFITS=doFITS.getRMSFITS( self.rawCOFITS, "rms_"+os.path.basename( self.rawCOFITS )  )
 
         doMWdbscan.rawCOFITS =  rawCOFITS
@@ -46,8 +47,8 @@ class dbServer(object):
         doMWdbscan.setCatalogSelectionCriteria( minVox=16,minChannel=3,hasBeam=1,minPeakSigma=5)
 
 
+
         doMWdbscan.computeDBSCAN()
-        doMWdbscan.labelFITSName= doMWdbscan.getLabelFITSName()
         doMWdbscan.getCatFromLabelArray(doClean=True) #by cleaning, we remove noise clusters
         doMWdbscan.produceCleanFITS()
 
@@ -55,8 +56,13 @@ class dbServer(object):
 
 doServer = dbServer()
 
+dataPath = "/media/qzyan/maclinux/Data/Q2CompareData/"
 
 if 1:
 
-    doServer.rawCOFITS="../MWISP_crop.fits"
-    doServer.pipeLine(produceRMSFITS=True)
+    doServer.rawCOFITS= dataPath+"CfA_crop.fits"
+    doServer.pipeLine(produceRMSFITS=True, processPath= "./DBSCANresults/" )
+
+    doServer.rawCOFITS=dataPath+"OGS_crop.fits"
+    doServer.pipeLine(produceRMSFITS=True, processPath= "./DBSCANresults/" )
+
